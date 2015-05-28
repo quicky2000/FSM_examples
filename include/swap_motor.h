@@ -31,6 +31,8 @@ namespace FSM_examples
       const std::string & get_class_name(void)const;
       swap_situation & run(const swap_situation & p_situation,
 			   const swap_transition & p_transition);
+      void apply(swap_situation & p_situation,
+		 const swap_transition & p_transition);
     private:
       static const std::string m_class_name;
     };

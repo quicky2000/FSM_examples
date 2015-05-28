@@ -39,6 +39,20 @@ namespace FSM_examples
       return l_result;
     }
   
+  //----------------------------------------------------------------------------
+  void swap_motor::apply(swap_situation & p_situation,
+                         const swap_transition & p_transition)
+    {
+      std::string l_content = p_situation.to_string();
+      assert(p_transition.get_source() < l_content.size());
+      assert(p_transition.get_destination() < l_content.size());
+      assert(p_transition.get_source() < p_transition.get_destination());
+      std::string l_new_content = l_content;
+      l_new_content[p_transition.get_destination()] = l_content[p_transition.get_source()];
+      l_new_content[p_transition.get_source()] = l_content[p_transition.get_destination()];
+      p_situation.set_content(l_new_content);
+    }
+
   const std::string swap_motor::m_class_name = "swap_motor";
 }
 //EOF

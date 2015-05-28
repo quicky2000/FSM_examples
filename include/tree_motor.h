@@ -31,6 +31,8 @@ namespace FSM_examples
       const std::string & get_class_name(void)const;
       tree_situation & run(const tree_situation & p_situation,
                            const tree_transition & p_transition);
+      void apply(tree_situation & p_situation,
+                 const tree_transition & p_transition);
     private:
       static const std::string m_class_name;
     };
