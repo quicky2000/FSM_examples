@@ -16,6 +16,7 @@
       along with this program.  If not, see <http://www.gnu.org/licenses/>
 */
 #include "swap_motor.h"
+#include "quicky_exception.h"
 
 namespace FSM_examples
 {
@@ -52,6 +53,12 @@ namespace FSM_examples
       l_new_content[p_transition.get_source()] = l_content[p_transition.get_destination()];
       p_situation.set_content(l_new_content);
     }
+  
+  //----------------------------------------------------------------------------
+  void swap_motor::revert_transition(swap_situation & p_situation)
+  {
+    throw quicky_exception::quicky_logic_exception(std::string(__func__) + " not implemented",__LINE__,__FILE__);
+  }
 
   const std::string swap_motor::m_class_name = "swap_motor";
 }

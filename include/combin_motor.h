@@ -33,6 +33,8 @@ namespace FSM_examples
 			     const combin_transition & p_transition);
       void apply(combin_situation & p_situation,
 		 const combin_transition & p_transition);
+      void revert_transition(combin_situation & p_situation);
+
     private:
       static const std::string m_class_name;
     };

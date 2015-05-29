@@ -33,6 +33,7 @@ namespace FSM_examples
 			   const swap_transition & p_transition);
       void apply(swap_situation & p_situation,
 		 const swap_transition & p_transition);
+      void revert_transition(swap_situation & p_situation);
     private:
       static const std::string m_class_name;
     };
